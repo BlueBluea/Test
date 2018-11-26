@@ -9,19 +9,40 @@
 import UIKit
 
 class ViewController: UIViewController {
+    let dic =
+         """
+            {
+              "name": "kitty",
+              "age": 12
+            }
+          """
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        test()
     }
     
     func test() {
-        print("test")
-        print("111")
+        let kitten = Cat.init(name: "kitten", age: 2)
+        do {
+            let data = try JSONEncoder().encode(kitten)
+            let dictionary = try JSONSerialization.jsonObject(with: data, options: .mutableContainers)
+            print(dictionary)
+        } catch {
+            print(error)
+        }
+        
+        let model = try! JSONDecoder().decode(Cat.self, from: dic.data(using: .utf8)!)
+        print(model.name)
     }
     
-    func test2() {
-        print("rebase")
-        print("222")
-    }
 }
+
+struct Cat: Codable {
+    let name: String
+    let age: Int
+}
+
+
 

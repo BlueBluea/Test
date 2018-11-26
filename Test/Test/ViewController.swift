@@ -17,7 +17,9 @@ class ViewController: UIViewController {
     func test() {
         print("test")
     }
-
-
+    
+    func test2() {
+        print("rebase")
+    }
 }
 

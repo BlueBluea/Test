@@ -21,6 +21,7 @@ class ViewController: UIViewController {
     
     func test2() {
         print("rebase")
+        print("ds")
     }
 }
 

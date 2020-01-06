@@ -24,17 +24,10 @@ class ViewController: UIViewController {
     }
     
     func test() {
-        let kitten = Cat.init(name: "kitten", age: 2)
-        do {
-            let data = try JSONEncoder().encode(kitten)
-            let dictionary = try JSONSerialization.jsonObject(with: data, options: .mutableContainers)
-            print(dictionary)
-        } catch {
-            print(error)
-        }
-        
-        let model = try! JSONDecoder().decode(Cat.self, from: dic.data(using: .utf8)!)
-        print(model.name)
+        print("test")
+        print("rever111t")
+        print("aa11as11")
+        print("33333")
     }
     
 }
